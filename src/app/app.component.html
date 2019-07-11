@@ -1,0 +1,23 @@
+<ion-app>
+  <ion-menu side="start" menuId="side-menu">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Welcome</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-menu-toggle>
+        <ion-list>
+          <ion-item [routerLink]="['/home/']">Home</ion-item>
+          <ion-item [routerLink]="['/camera/']">Camera</ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <div class="ion-margin">
+          <ion-button [routerLink]="['/login/']">Login</ion-button>
+        </div>
+      </ion-menu-toggle>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,7 @@
+{
+  "name": "ejadaApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
