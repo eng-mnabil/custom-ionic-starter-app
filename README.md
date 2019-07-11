@@ -7,7 +7,8 @@ A simple application based on Ionic Framework blank template. It's aiming to cre
 ```
 ionic cordova plugin add cordova-plugin-camera  
 npm install @ionic-native/camera
-```
+```  
+Reference: https://ionicframework.com/docs/native/camera
 
 ## Android build
 
