@@ -5,11 +5,11 @@ import { ToastController } from '@ionic/angular';
 import { EndpointsService } from '../services/endpoints.service';
 
 @Component({
-  selector: 'app-upload-file',
-  templateUrl: './upload-file.page.html',
-  styleUrls: ['./upload-file.page.scss'],
+  selector: 'app-upload-image',
+  templateUrl: './upload-image.page.html',
+  styleUrls: ['./upload-image.page.scss'],
 })
-export class UploadFilePage implements OnInit {
+export class UploadImagePage implements OnInit {
   image:any='';
   imageData:any='';
 
@@ -23,6 +23,8 @@ export class UploadFilePage implements OnInit {
   ngOnInit() {
   }
 
+  // Open Camera, capture image, save it to gallery, and get it's base64 formate
+  //////////////////////////////////////////////////////////////////////////////
   openCam(){
     const options: CameraOptions = {
       quality: 100,
@@ -41,6 +43,8 @@ export class UploadFilePage implements OnInit {
     });
   }
   
+  // Upload base64 image to fake server
+  //////////////////////////////////////////////////////////////////////////////
   async uploadImg() {
     const loading = await this.loadingController.create({
       message: 'Uploading...',
@@ -53,6 +57,8 @@ export class UploadFilePage implements OnInit {
     });
   }
 
+  // Present ionic toast
+  //////////////////////////////////////////////////////////////////////////////
   async presentToast(message: string) {
     const toastMessage = await this.toastController.create({
       message: message,
