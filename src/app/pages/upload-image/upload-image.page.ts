@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { LoadingController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
-import { EndpointsService } from '../services/endpoints.service';
+import { EndpointsService } from '../../services/endpoints.service';
 
 @Component({
   selector: 'app-upload-image',

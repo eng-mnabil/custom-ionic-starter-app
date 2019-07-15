@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 
-import { EndpointsService } from '../services/endpoints.service';
+import { EndpointsService } from '../../services/endpoints.service';
 
 
 @Component({

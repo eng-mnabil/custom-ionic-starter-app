@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { UploadImagePage } from './upload-image.page';
-import { ComponentsModule } from '../components/components.module';
+import { UploadFilePage } from './upload-file.page';
+import { ComponentsModule } from '../../components/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: UploadImagePage
+    component: UploadFilePage
   }
 ];
 
@@ -22,6 +22,6 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [UploadImagePage]
+  declarations: [UploadFilePage]
 })
-export class UploadImagePageModule {}
+export class UploadFilePageModule {}
