@@ -5,13 +5,17 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class EndpointsService {
-  apiUrl:string = 'https://my-json-server.typicode.com/eng-mnabil/fake-server/users';
+  apiUrl:string = 'https://my-json-server.typicode.com/eng-mnabil/fake-server';
 
   constructor(
     private httpClient: HttpClient
   ) { }
 
   getUsers() {
-      return this.httpClient.get(this.apiUrl);
+      return this.httpClient.get(this.apiUrl+'/users');
+  }
+
+  uploadImg(data) {
+    return this.httpClient.post(this.apiUrl+'/users', data);
   }
 }
