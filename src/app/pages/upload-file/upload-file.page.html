@@ -1,5 +1,10 @@
 <app-header title="Upload file"></app-header>
 
 <ion-content>
-
+  <div class="ion-padding">
+    <ion-button (click)="chooseFile()" >Choose file</ion-button>
+    <ion-button (click)="uploadFile()">Upload selected file</ion-button>
+    <p *ngIf="fileName">File name: {{fileName}}</p>
+    <p *ngIf="fileType">File type: {{fileType}}</p>
+  </div>
 </ion-content>
