@@ -1,0 +1,17 @@
+<app-header title="Upload multiple"></app-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-button (click)="addFile()" >Add file</ion-button>
+    <ion-button (click)="uploadFiles()">Upload selected files</ion-button>
+    <ion-list>
+      <ion-item *ngFor="let file of files;let i = index">
+        <span>File name: {{file.name}}</span>
+        <span>File type: {{file.type}}</span>
+        <ion-button (click)="remove(i)">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
