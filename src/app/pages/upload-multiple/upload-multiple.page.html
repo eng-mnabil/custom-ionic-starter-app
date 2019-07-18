@@ -2,8 +2,8 @@
 
 <ion-content>
   <div class="ion-padding">
-    <ion-button (click)="addFile()" >Add file</ion-button>
-    <ion-button (click)="uploadFiles()">Upload selected files</ion-button>
+    <ion-button (click)="addFile()" expand="full">Add file</ion-button>
+    <ion-button (click)="uploadFiles()" expand="full">Upload selected files</ion-button>
     <ion-list>
       <ion-item *ngFor="let file of files;let i = index">
         <ion-label text-wrap>{{file.name}}</ion-label>

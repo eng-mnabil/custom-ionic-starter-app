@@ -2,8 +2,8 @@
 
 <ion-content>
   <div class="ion-padding">
-    <ion-button (click)="openCam()" >Take Photo</ion-button>
-    <ion-button (click)="uploadImg()">Upload captured image</ion-button>
+    <ion-button (click)="openCam()" expand="full">Take Photo</ion-button>
+    <ion-button (click)="uploadImg()" expand="full">Upload captured image</ion-button>
     <img *ngIf="image" src="{{image}}">
   </div>
 </ion-content>

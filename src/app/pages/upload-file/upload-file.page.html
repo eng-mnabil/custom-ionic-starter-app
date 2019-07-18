@@ -2,9 +2,12 @@
 
 <ion-content>
   <div class="ion-padding">
-    <ion-button (click)="chooseFile()" >Choose file</ion-button>
-    <ion-button (click)="uploadFile()">Upload selected file</ion-button>
-    <p *ngIf="fileName">File name: {{fileName}}</p>
-    <p *ngIf="fileType">File type: {{fileType}}</p>
+    <ion-button (click)="chooseFile()" expand="full">Select file</ion-button>
+    <ion-button (click)="uploadFile()" expand="full">Upload selected file</ion-button>
+    <ion-list *ngIf="fileName">
+      <ion-item>
+        <ion-label text-wrap>{{fileName}}</ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>

@@ -32,7 +32,8 @@ export class UploadImagePage implements OnInit {
       destinationType: this.camera.DestinationType.DATA_URL,//base64 formate
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      saveToPhotoAlbum: true
+      saveToPhotoAlbum: true,
+      correctOrientation: true
     }
     
     this.camera.getPicture(options).then( (imageData) => {
@@ -54,6 +55,9 @@ export class UploadImagePage implements OnInit {
     this.server.uploadImg(this.imageData).subscribe( (res) => {
       loading.dismiss();
       this.presentToast("Successfully uploaded with id "+ res['id']);
+    },err=>{
+      console.log(err);
+      loading.dismiss();
     });
   }
 
