@@ -29,8 +29,7 @@ export class UploadMultiplePage implements OnInit {
     private platform: Platform
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // Choose file, get it's path,name and type 
   // handling Android and IOS
