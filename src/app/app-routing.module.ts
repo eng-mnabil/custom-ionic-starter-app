@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'upload-image', loadChildren: './pages/upload-image/upload-image.module#UploadImagePageModule' },
   { path: 'upload-file', loadChildren: './pages/upload-file/upload-file.module#UploadFilePageModule' },
   { path: 'upload-multiple', loadChildren: './pages/upload-multiple/upload-multiple.module#UploadMultiplePageModule' },
+  { path: 'download', loadChildren: './pages/download/download.module#DownloadPageModule' },
 ];
 
 @NgModule({

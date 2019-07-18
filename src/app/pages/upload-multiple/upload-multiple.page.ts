@@ -99,7 +99,7 @@ export class UploadMultiplePage implements OnInit {
   ////////////////////////////////////////////////////////////
   async uploadFile(fileElement, index) {
     const loading = await this.loadingController.create({
-      message: 'Uploading file ' + index+1,
+      message: 'Uploading file ' + parseInt(index+1),
     });
     loading.present();
 
@@ -120,7 +120,6 @@ export class UploadMultiplePage implements OnInit {
       }, (err) => {
         console.log(err);
         resolve(err);
-        this.presentToast(err);
         loading.dismiss();
       })
     });
