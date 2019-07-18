@@ -10,6 +10,8 @@ const routes: Routes = [
   { path: 'upload-file', loadChildren: './pages/upload-file/upload-file.module#UploadFilePageModule' },
   { path: 'upload-multiple', loadChildren: './pages/upload-multiple/upload-multiple.module#UploadMultiplePageModule' },
   { path: 'download', loadChildren: './pages/download/download.module#DownloadPageModule' },
+  { path: 'dropdown', loadChildren: './pages/dropdown/dropdown.module#DropdownPageModule' },
+  { path: 'dropdown-dynamic', loadChildren: './pages/dropdown-dynamic/dropdown-dynamic.module#DropdownDynamicPageModule' },
 ];
 
 @NgModule({

@@ -1,0 +1,14 @@
+<app-header title="Dropdown Dynamic"></app-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-list>
+      <ion-item *ngIf="colors">
+        <ion-label>Color</ion-label>
+        <ion-select interface="alert" multiple="true" placeholder="Select One">
+          <ion-select-option *ngFor="let color of colors | keyvalue" value="{{color.key}}">{{color.value}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

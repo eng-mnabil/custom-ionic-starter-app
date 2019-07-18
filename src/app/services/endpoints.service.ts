@@ -15,6 +15,10 @@ export class EndpointsService {
       return this.httpClient.get(this.apiUrl+'/users');
   }
 
+  getColors() {
+    return this.httpClient.get(this.apiUrl+'/colors');
+  }
+
   uploadImg(data) {
     return this.httpClient.post(this.apiUrl+'/users', data);
   }
