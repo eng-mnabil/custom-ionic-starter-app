@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'dropdown', loadChildren: './pages/dropdown/dropdown.module#DropdownPageModule' },
   { path: 'dropdown-dynamic', loadChildren: './pages/dropdown-dynamic/dropdown-dynamic.module#DropdownDynamicPageModule' },
   { path: 'search', loadChildren: './pages/search/search.module#SearchPageModule' },
+  { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
 ];
 
 @NgModule({
