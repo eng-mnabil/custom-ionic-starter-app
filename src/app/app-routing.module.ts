@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'download', loadChildren: './pages/download/download.module#DownloadPageModule' },
   { path: 'dropdown', loadChildren: './pages/dropdown/dropdown.module#DropdownPageModule' },
   { path: 'dropdown-dynamic', loadChildren: './pages/dropdown-dynamic/dropdown-dynamic.module#DropdownDynamicPageModule' },
+  { path: 'search', loadChildren: './pages/search/search.module#SearchPageModule' },
 ];
 
 @NgModule({
