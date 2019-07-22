@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform, ToastController } from '@ionic/angular';
-import { GoogleMaps, GoogleMap, GoogleMapsEvent, Marker, GoogleMapsAnimation, MyLocation } from '@ionic-native/google-maps';
+import { GoogleMaps, GoogleMap, GoogleMapsEvent, Marker, GoogleMapsAnimation, MyLocation, Environment } from '@ionic-native/google-maps';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @Component({
@@ -20,7 +20,6 @@ export class MapPage implements OnInit {
 
   ngOnInit() {
     this.platform.ready().then((res) => {
-
       this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION).then(
         result => {
           console.log('Has permission?',result.hasPermission);
@@ -45,6 +44,13 @@ export class MapPage implements OnInit {
   }
 
   loadMap() {
+    Environment.setEnv({
+      // api key for server
+      'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyDxEuBpBkn-ygnnBxXS0NLu0ZilGuUGBUc',
+
+      // api key for local development
+      'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyDxEuBpBkn-ygnnBxXS0NLu0ZilGuUGBUc'
+    });
     this.map = GoogleMaps.create('map_canvas', {
 
     });

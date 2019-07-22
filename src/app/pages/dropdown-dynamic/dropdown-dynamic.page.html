@@ -10,5 +10,12 @@
         </ion-select>
       </ion-item>
     </ion-list>
+
+    <ion-list *ngIf="colors">
+      <h2>Normal dynamic ion-list example</h2>
+      <ion-item *ngFor="let color of colors | keyvalue">
+        {{color.value}}
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
