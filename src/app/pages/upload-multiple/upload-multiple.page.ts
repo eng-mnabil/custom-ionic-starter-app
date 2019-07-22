@@ -6,6 +6,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'app-upload-multiple',
@@ -41,7 +42,10 @@ export class UploadMultiplePage implements OnInit {
            this.filesPath = filePath;
            this.fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
            this.fileType = this.fileName.substring(this.fileName.lastIndexOf(".") + 1);
-           if(this.filesType.indexOf(this.fileType) > -1) {
+           if( this.files.some( (item) => item.path == filePath ) ) {
+            this.presentToast("File already added");
+           }
+           else if(this.filesType.indexOf(this.fileType) > -1 ) {
              this.presentToast("Accepted File type");
              this.files.push({
                'name': this.fileName,
