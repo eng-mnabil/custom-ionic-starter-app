@@ -6,7 +6,7 @@
       <ion-searchbar type="text" (ionInput)="search($event)"></ion-searchbar>
     </ion-toolbar>
     <ion-list>
-      <ion-item *ngFor="let item of items">{{item}}</ion-item>
+      <ion-item *ngFor="let item of filteredItems">{{item}}</ion-item>
     </ion-list>
   </div>
 </ion-content>
