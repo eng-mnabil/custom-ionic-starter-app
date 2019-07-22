@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -10,12 +11,14 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./download.page.scss'],
 })
 export class DownloadPage implements OnInit {
+  downloadedFileUrl;
 
   constructor(
     private transfer: FileTransfer,
     private file: File,
     private androidPermissions: AndroidPermissions,
     private toastController: ToastController,
+    private fileOpener: FileOpener
   ) { }
 
   ngOnInit() {
@@ -68,15 +71,36 @@ export class DownloadPage implements OnInit {
   ////////////////////////////////////////////////
   download3() {
     const fileTransfer: FileTransferObject = this.transfer.create();
-        const url = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
-        fileTransfer.download(url, this.file.externalRootDirectory+ '/my_downloads/' + 'file.pdf').then((entry) => {
-          console.log(entry);
-          console.log('download complete: ' + entry.toURL());
-          this.presentToast("Download complete at " + entry.fullPath);
-        }, (error) => {
-          // handle error
-          console.log(error);
-        });
+    const url = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+    fileTransfer.download(url, this.file.externalRootDirectory+ '/my_downloads/' + 'file.pdf').then((entry) => {
+      console.log(entry);
+      console.log('download complete: ' + entry.toURL());
+      this.downloadedFileUrl = entry.toURL();
+      this.presentToast("Download complete at " + entry.fullPath);
+    }, (error) => {
+      // handle error
+      console.log(error);
+    });
+  }
+
+  download_default() {
+    const fileTransfer: FileTransferObject = this.transfer.create();
+    const url = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+    fileTransfer.download(url, this.file.externalRootDirectory+ '/Download/' + 'file.pdf').then((entry) => {
+      console.log(entry);
+      console.log('download complete: ' + entry.toURL());
+      this.downloadedFileUrl = entry.toURL();
+      this.presentToast("Download complete at " + entry.fullPath);
+    }, (error) => {
+      // handle error
+      console.log(error);
+    });
+  }
+
+  openFile() {
+    this.fileOpener.open(this.downloadedFileUrl, 'application/pdf')
+    .then(() => console.log('File is opened'))
+    .catch(e => console.log('Error opening file', e));
   }
 
   async presentToast(message: string) {

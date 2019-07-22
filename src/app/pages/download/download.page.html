@@ -2,6 +2,8 @@
 
 <ion-content>
   <div class="ion-padding">
-    <ion-button (click)="download()" expand="full">Download</ion-button>
+    <ion-button (click)="download()" expand="full">Download at my_downloads</ion-button>
+    <ion-button (click)="download_default()" expand="full">Download at default Downloads</ion-button>
+    <ion-button (click)="openFile()" expand="full" [disabled]="!downloadedFileUrl">View downloaded file</ion-button>
   </div>
 </ion-content>

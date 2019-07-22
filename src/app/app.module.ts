@@ -13,6 +13,7 @@ import { FilePath } from '@ionic-native/file-path/ngx';
 import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { AppRoutingModule } from './app-routing.module';
     IOSFilePicker,
     File,
     AndroidPermissions,
+    FileOpener,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
